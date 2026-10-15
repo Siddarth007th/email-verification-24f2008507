@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Effective Config API</title>
+  <style>
+    :root { color-scheme: dark; --bg: #0b1020; --panel: #151d35; --text: #eef2ff; --muted: #aab5d6; --accent: #8b9cff; }
+    * { box-sizing: border-box; }
+    body { margin: 0; font: 16px/1.6 system-ui, -apple-system, sans-serif; color: var(--text); background: radial-gradient(circle at top right, #27346b, var(--bg) 45%); }
+    main { width: min(960px, calc(100% - 40px)); margin: 0 auto; padding: 80px 0; }
+    .eyebrow { color: var(--accent); font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+    h1 { max-width: 760px; margin: 12px 0 20px; font-size: clamp(2.5rem, 7vw, 5.5rem); line-height: .98; }
+    h2 { margin-top: 0; }
+    p { color: var(--muted); max-width: 680px; }
+    .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin: 42px 0; }
+    .card { padding: 24px; background: color-mix(in srgb, var(--panel) 88%, transparent); border: 1px solid #2c3964; border-radius: 18px; }
+    code { color: #d8ddff; background: #0b1127; padding: 3px 7px; border-radius: 6px; }
+    a { color: #c4ccff; }
+    footer { margin-top: 72px; padding-top: 20px; border-top: 1px solid #2c3964; color: var(--muted); }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="eyebrow">Project showcase</div>
+    <h1>Effective configuration, made observable.</h1>
+    <p>A compact FastAPI service that resolves configuration from defaults, environment-specific YAML, dotenv values, operating-system variables, and repeated CLI query overrides.</p>
+
+    <section class="card-grid" aria-label="Project highlights">
+      <article class="card"><h2>Layered precedence</h2><p>Defaults → YAML → <code>.env</code> → <code>APP_*</code> environment variables → <code>set=key=value</code> overrides.</p></article>
+      <article class="card"><h2>Safe output</h2><p>Typed values are returned consistently, while the API key is always masked as <code>****</code>.</p></article>
+      <article class="card"><h2>Deployable API</h2><p>FastAPI with permissive CORS and a public deployment workflow suitable for browser-based graders and demos.</p></article>
+    </section>
+
+    <p><a href="https://effective-config-api-pi.vercel.app/effective-config">Try the live API →</a></p>
+    <footer>
+      <!--email_off-->24f2008507@ds.study.iitm.ac.in<!--/email_off-->
+    </footer>
+  </main>
+</body>
+</html>
